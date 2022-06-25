@@ -1,7 +1,7 @@
 # Use latest stable channel SDK.
 FROM dart:stable AS build
 
-ENV PORT 10000
+# ENV PORT 8080
 
 # Resolve app dependencies.
 WORKDIR /app
@@ -19,5 +19,5 @@ COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 
 # Start server.
-EXPOSE $PORT
+# EXPOSE $PORT
 CMD ["/app/bin/server"]
